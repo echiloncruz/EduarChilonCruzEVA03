@@ -40,13 +40,13 @@ public class Club {
 
 
 	public Integer inscribirEnEvento(String nombre, Deportista agregado) throws NoEstaPreparado{
-		Integer cantidad =0;
+		Integer cantidad =0; /*parta reemplazar con el metodo del evento*/
 		Evento nuevo = competencias.get(nombre);
 		TipoDeEvento aux = nuevo.getTipo();
 		switch(aux) {
 		case CARRERA_NATACION_EN_AGUAS_ABIERTAS:
 			if(agregado instanceof Nadador)
-				cantidad = nuevo.agregarDeportistaAlEvento(agregado);
+				cantidad = nuevo.agregarDeportistaAlEvento(agregado); /*como retorna un integer se puede igualar*/
 				else
 					throw new NoEstaPreparado("No es Nadador");
 				break;

@@ -60,9 +60,9 @@ public class Evento implements Comparable <Evento>{
 	
 	
 	public Integer agregarDeportistaAlEvento(Deportista deportista) {
-		++numeroDeInscripcion;
+		numeroDeInscripcion++; /*a medida que va aumnetando primero es porque creo un numero*/
 		participantes.put(this.numeroDeInscripcion, deportista);
-		return this.getNumeroDeInscripcion();
+		return this.getNumeroDeInscripcion(); 
 	}
 
 

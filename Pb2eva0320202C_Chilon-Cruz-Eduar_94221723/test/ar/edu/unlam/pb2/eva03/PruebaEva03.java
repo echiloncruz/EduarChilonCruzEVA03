@@ -97,4 +97,6 @@ public class PruebaEva03 {
 		
 		assertEquals((Integer)1, actual.inscribirEnEvento("Maraton de New York", celeste));			
 	}
+	
+	
 }

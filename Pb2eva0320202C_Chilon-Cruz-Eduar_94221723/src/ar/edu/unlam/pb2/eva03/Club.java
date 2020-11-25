@@ -34,7 +34,8 @@ public class Club {
 
 
 	public void crearEvento(TipoDeEvento tipoEvento, String nombre) {
-	competencias.put(nombre, new Evento (tipoEvento));
+		Evento nuevo = new Evento(tipoEvento);
+	competencias.put(nombre, nuevo);
 	}
 
 

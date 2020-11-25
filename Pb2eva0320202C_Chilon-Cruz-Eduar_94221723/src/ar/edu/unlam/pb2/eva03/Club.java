@@ -23,7 +23,6 @@ public class Club {
 
 
 	public void agregarDeportista(Deportista corredor) {
-		if(corredor instanceof Deportista)
 			this.socios.add(corredor);	
 	}
 
@@ -34,27 +33,38 @@ public class Club {
 	}
 
 
-	public void crearEvento(TipoDeEvento tipoEvento, String descripcion) throws NoEstaPreparado{
-		Evento nuevo = new Evento(tipoEvento);
-		switch(tipoEvento) {
-		case CARRERA_NATACION_EN_AGUAS_ABIERTAS:
-			competencias.put(descripcion, nuevo);
-			break;
-		case TRIATLON_IRONMAN:
-			competencias.put(descripcion, nuevo);
-			break;
-		case CARRERA_42K:
-			competencias.put(descripcion, nuevo);
-			break;
-			default:
-				throw new NoEstaPreparado("Este evento no es compatible");
-		}
+	public void crearEvento(TipoDeEvento tipoEvento, String nombre) {
+	competencias.put(nombre, new Evento (tipoEvento));
 	}
 
 
-	public Integer inscribirEnEvento(String string, Deportista celeste) {
-		
-		return 0;
+	public Integer inscribirEnEvento(String nombre, Deportista agregado) throws NoEstaPreparado{
+		Integer cantidad =0;
+		Evento nuevo = competencias.get(nombre);
+		TipoDeEvento aux = nuevo.getTipo();
+		switch(aux) {
+		case CARRERA_NATACION_EN_AGUAS_ABIERTAS:
+			if(agregado instanceof Nadador)
+				cantidad = nuevo.agregarDeportistaAlEvento(agregado);
+				else
+					throw new NoEstaPreparado("No es Nadador");
+				break;
+		case TRIATLON_IRONMAN:
+			if(agregado instanceof Triatleta)
+				cantidad = nuevo.agregarDeportistaAlEvento(agregado);
+				else
+					throw new NoEstaPreparado("No es Triatleta");
+				break;
+		case CARRERA_42K:
+			if(agregado instanceof Corredor)
+			cantidad = nuevo.agregarDeportistaAlEvento(agregado);
+			else
+				throw new NoEstaPreparado("No es Corredor");
+			break;
+			default:
+				break;
+				
+		}return cantidad;
 	}
 	
 	

@@ -1,13 +1,17 @@
 package ar.edu.unlam.pb2.eva03;
 
-public class Deportista implements Comparable<Deportista>{
+import ar.edu.unlam.pb2.eva03.enumeradores.TipoDeEvento;
+
+public  class Deportista implements Comparable<Deportista>{
 
 	private Integer numeroDeSocio;
 	private String nombre;
+	private TipoDeEvento evento;
 	
 	public Deportista(Integer numeroDeSocio, String nombre) {
 		this.numeroDeSocio = numeroDeSocio;
 		this.nombre = nombre;
+		this.evento=null;
 	}
 	
 	public Deportista() {
@@ -58,7 +62,6 @@ public class Deportista implements Comparable<Deportista>{
 		
 		return this.numeroDeSocio.compareTo(o.getNumeroDeSocio());
 	}
-	
 	
 	
 }

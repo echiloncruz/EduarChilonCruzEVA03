@@ -1,6 +1,9 @@
 package ar.edu.unlam.pb2.eva03;
 
-public class Corredor extends Deportista{
+import ar.edu.unlam.pb2.eva03.enumeradores.TipoDeEvento;
+import ar.edu.unlam.pb2.eva03.interfaces.ICorredor;
+
+public class Corredor extends Deportista implements ICorredor{
 
 	private Integer distanciaPreferida;
 	private Integer cantidadDeKilometrosEntrenados;
@@ -30,7 +33,6 @@ public class Corredor extends Deportista{
 		this.cantidadDeKilometrosEntrenados = cantidadDeKilometrosEntrenados;
 	}
 	
-	
-	
+
 	
 }

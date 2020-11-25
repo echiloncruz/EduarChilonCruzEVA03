@@ -9,6 +9,7 @@ public class Triatleta extends Deportista{
 	
 	
 	
+	
 	public Triatleta(Integer numeroDeSocio, String nombre,String distanciaPreferida, TipoDeBicicleta tipoDeBicicleta ) {
 		super(numeroDeSocio, nombre);
 		this.distanciaPreferida=distanciaPreferida;

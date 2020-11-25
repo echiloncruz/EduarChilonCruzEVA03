@@ -24,6 +24,7 @@ public class Evento implements Comparable <Evento>{
 	public Evento(TipoDeEvento tipo) {
 		this.tipo = tipo;
 		this.participantes = new TreeMap <Integer, Deportista>();	
+		this.numeroDeInscripcion=0;
 	}
 
 
@@ -51,15 +52,17 @@ public class Evento implements Comparable <Evento>{
 		return participantes;
 	}
 
-
+	
 	public void setParticipantes(Map<Integer, Deportista> participantes) {
 		this.participantes = participantes;
 	}
 	
 	
 	
-	public void agregarDeportistaAlEvento(Integer codigo, Deportista deportista) {
-		participantes.put(codigo, deportista);
+	public Integer agregarDeportistaAlEvento(Deportista deportista) {
+		++numeroDeInscripcion;
+		participantes.put(this.numeroDeInscripcion, deportista);
+		return this.getNumeroDeInscripcion();
 	}
 
 

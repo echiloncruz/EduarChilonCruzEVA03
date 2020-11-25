@@ -1,5 +1,7 @@
 package ar.edu.unlam.pb2.eva03;
 
+import ar.edu.unlam.pb2.eva03.enumeradores.TipoDeEvento;
+
 public class Ciclista extends Deportista{
 
 	private String tipoDeBicicleta;
@@ -21,7 +23,7 @@ public class Ciclista extends Deportista{
 		this.tipoDeBicicleta = tipoDeBicicleta;
 	}
 	
-	
+
 	
 	
 }
